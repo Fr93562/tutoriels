@@ -76,6 +76,21 @@ Pour créer votre token, vous aurez besoin de deux éléments:
 
 3 - Vous avez un token JWT de crée!
 
+### Comment on le décrypte?
+
+Rien de plus simple!
+
+1 - On récupère notre token depuis le header
+
+2 - On instancie notre objet JWT
+
+3 - On utilise la méthode de décryptage de l'objet JWT avec en argument ``` secret word ```  qui a été utilisé pour le crypter.
+
+4 - Le token est décrypté. Il reste qu'à extraite les informations de sa payload. On les récupère comme n'importe objet java par exemple
+
+
+! : A noter qu'il existe des méthodes qui facilitent la manipulation des token. Notamment avec la méthode ``` verify ``` qui existe dans certaines librairie. Je l'ai jamais utilisé.
+
 
 ### Utilisé par qui?
 
@@ -140,6 +155,20 @@ Il existe plusieurs façon d'améliorer la sécurité avec le JWT.
 https://jwt.io/introduction/
 
 https://www.attineos.com/blog/tutotrompe/tutotrompe-video-symfony (exemple avec Symfony mais la mécanique est la même)
+
+Projet de Josselin: https://github.com/jtobelem-simplon/toh-backend-tests
+
+Exemple from scratch: https://github.com/Fr93562/projet-fil-rouge-Simplon/blob/master/backend/demo-1/src/main/java/fr/api/trivialCode/service/Authentification.java
+
+Exemple d'un autre langage
+
+* Attention: C'est un projet Symfony. Le code d'authentification est généré par le framework. Le code est relativement abstrait!
+
+Système d'authentification: https://github.com/Fr93562/projet-8-DA-PHP/blob/master/src/Security/LoginFormAuthenticator.php
+
+Configuration du firewall: https://github.com/Fr93562/projet-8-DA-PHP/blob/master/config/packages/security.yaml
+
+
 
 -----------------
 
