@@ -46,7 +46,9 @@ JWT signifie ```json web token```, il s'agit d'un "jeton" crypté qui est compos
 
 La payload peut-être décryptée. C'est la comparaison de la payload avec sa signature qui permet de vérifier si le token est valide et qu'il n'a pas été modifié par un tierce.
 
-Typiquement un JWT ressemble à ceci: ``` xxxxx.yyyyy.zzzzz ```.
+Typiquement un JWT ressemble à ceci: 
+``` eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI
+ ```
 
 ### Quelle utilité?
 
