@@ -154,6 +154,11 @@ Il existe plusieurs façons d'améliorer la sécurité avec le JWT.
 
 * Installer une date d'expiration: Le token ne sera valide que pendant une certaine durée. Souvent utilisé dans des application dont la réponse attendue doit être rapide. A chaque approche de l'échéance, le token sera renouvellé.
 
+## Partie pratique
+
+
+https://github.com/Logik-Dev/simple-jwt 
+
 ## Les références
 
 https://jwt.io/introduction/
