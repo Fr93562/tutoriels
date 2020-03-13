@@ -16,14 +16,14 @@
 ## Résumé
 
 
-Le but du tutoriel est de présenter le concept de l'authentificatoin à l'aide du JWT pour sécuriser ses applications.
+Le but du tutoriel est de présenter le concept de l'authentification à l'aide du JWT pour sécuriser ses applications.
 
 
 ## Un moyen d'authentification parmi d'autre
 
 Il existe de très nombreuses manières de sécuriser une application à l'aide de l'authentification:
 
-* Uusername / password en clair: On le comparer au niveau du back-end. Le principal inconvénient est qu'à chaque requête, on va renvoyer ses identifiants. 
+* Uusername / password en clair: On le compare au niveau du back-end. Le principal inconvénient est qu'à chaque requête, on va renvoyer ses identifiants. 
 
 * L'utilisation d'api key: On l'utilise dans le cas des API publiques.
 
@@ -41,8 +41,10 @@ Il existe de très nombreuses manières de sécuriser une application à l'aide 
 JWT signifie ```json web token```, il s'agit d'un "jeton" crypté qui est composé de trois éléments:
 
 - Header : comme son nom l'indique
-- Payload : il s'agit de la charge utile. C'est ici que seront stockés les données qu'on souhaite crypter.
+- Payload : il s'agit de la charge utile. C'est ici que sera stocké les données qu'on souhaite crypter. 
 - Signature: comme son nom l'indique xd
+
+La payload peut-être décryptée. C'est la comparaison de la payload avec sa signature qui permet de vérifier si le token est valide et qu'il n'a pas été modifié par un tierce.
 
 Typiquement un JWT ressemble à ceci: ``` xxxxx.yyyyy.zzzzz ```.
 
@@ -54,7 +56,7 @@ Le problème de l'authentification "classique" est principalement lié au manque
 Le JWT est l'une des réponses à ce problème:
 
 - Il permet de différencier les données d'un utilisateur de son droit d'accès. Le jeton JWT représente ses droits auprès de l'application back-end.
-- Il permet de stocker des informations utile à l'intérieur du jeton.
+- Il permet de stocker des informations utiles à l'intérieur du jeton.
 - On peut le renouveler au besoin.
 - Il y a une vraie liberté en terme d'implémentation: des systèmes de connexion crées à la main aux systèmes intégrés dans les framework (  ``` SpringBoot , Symfony  ...``` )
 
@@ -142,7 +144,7 @@ Prérequis: Connexion réussie
 
 ## Comment améliorer la sécurité avec JWT?
 
-Il existe plusieurs façon d'améliorer la sécurité avec le JWT.
+Il existe plusieurs façons d'améliorer la sécurité avec le JWT.
 
 * Cryptage: Il existe de très nombreux algorithmes de cryptage tel que bcrypt, sha256 ou sha512 (qui sont les plus connus). Selon le niveau de crypate, le token sera plus ou moins facile à décrypter.
 
@@ -164,18 +166,12 @@ Exemple d'un autre langage
 
 * Attention: C'est un projet Symfony. Le code d'authentification est généré par le framework. Le code est relativement abstrait!
 
-Système d'authentification: https://github.com/Fr93562/projet-8-DA-PHP/blob/master/src/Security/LoginFormAuthenticator.php
+Système d'authentification: https://github.com/Fr93562/projet-7-DA-PHP/blob/master/src/Security/TokenAuthenticator.php
 
-Configuration du firewall: https://github.com/Fr93562/projet-8-DA-PHP/blob/master/config/packages/security.yaml
-
-
+Configuration du firewall: https://github.com/Fr93562/projet-7-DA-PHP/blob/master/config/packages/security.yaml
 
 -----------------
 
 ### Mises à jour:
 
-- Création du projet: 25/11/19
-- Installation des différents bundles + mise à jour du README: 26/11/19
-- Mises à jour diverses: 31/01/20
-
-
+- Création du projet: 13/03/20
